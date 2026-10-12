@@ -1,136 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LearnToBeAFeminist – Digital Magazine</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnToBeAFeminist – Magazine numérique / Digital Magazine</title>
+  <meta name="description" content="LearnToBeAFeminist : magazine bilingue pour comprendre le féminisme, surtout si vous pensez ne pas en avoir besoin. Bilingual magazine on feminism.">
+  <meta name="theme-color" content="#3A1230">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <!-- Script Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
-    /* Design avec fond rosé et image en arrière-plan */
+    :root {
+      --plum: #3A1230;
+      --ink: #2B112C;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: linear-gradient(rgba(252, 228, 236, 0.85), rgba(252, 228, 236, 0.85)), 
-                  url('assets/images/wmremove-transformed.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #2b112c;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      font-family: var(--font);
+      color: var(--ink);
+      background: #FCE4EC;
     }
 
+    /* Photo de fond + voile rosé, fixe et compatible mobile */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(rgba(252, 228, 236, 0.85), rgba(252, 228, 236, 0.85)),
+        url('assets/images/wmremove-transformed.png') center / cover no-repeat;
+    }
+
+    a:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
+
+    /* ---------- En-tête ---------- */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
+      flex-wrap: wrap;
+      gap: .75rem 1.5rem;
+      padding: 1.25rem clamp(1rem, 4vw, 2.5rem);
     }
-
     .logo a {
       font-weight: 800;
-      font-size: 1.4rem;
-      color: #2b112c;
+      font-size: 1.3rem;
+      color: var(--plum);
       text-decoration: none;
     }
+    nav ul { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
+    nav a { color: var(--ink); font-weight: 600; text-decoration: none; }
+    nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #2b112c;
-      font-weight: 600;
-    }
-
+    /* ---------- Contenu ---------- */
     main {
       flex: 1;
-      max-width: 900px;
+      width: min(100% - 2rem, 760px);
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: clamp(1.5rem, 5vw, 3rem) 0;
       text-align: center;
     }
 
-    .hero h1 {
-      font-size: 2.8rem;
+    h1 {
+      margin: 0 0 .5rem;
+      font-size: clamp(2.2rem, 7.5vw, 3.6rem);
       font-weight: 900;
-      color: #2b112c;
-      margin-bottom: 10px;
-      line-height: 1.2;
+      line-height: 1.1;
+      letter-spacing: -.01em;
+      color: var(--plum);
     }
-
     .slogan {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #2b112c;
-      margin-bottom: 30px;
+      max-width: 34ch;
+      margin: 0 auto 1.75rem;
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-weight: 500;
+      line-height: 1.4;
     }
 
+    /* ---------- Boutons en pastille ---------- */
     .language-selection {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin-bottom: 40px;
+      gap: .9rem;
+      margin-bottom: 2rem;
     }
-
-    .btn {
+    .pill {
       display: inline-block;
-      padding: 12px 28px;
-      background-color: #512b58;
-      color: #ffffff;
+      padding: .7rem 1.6rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .88);
+      color: var(--plum);
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.2s ease;
+      box-shadow: 0 3px 10px rgba(58, 18, 48, .15);
+      transition: background .2s ease, color .2s ease;
     }
+    .pill:hover { background: var(--plum); color: #fff; }
 
-    .btn:hover {
-      background-color: #3b1e40;
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: #512b58;
-      border: 2px solid #512b58;
-    }
-
-    .btn-secondary:hover {
-      background-color: rgba(81, 43, 88, 0.1);
-    }
-
+    /* ---------- Carte de bienvenue ---------- */
     .intro-card {
-      background: rgba(255, 255, 255, 0.75);
+      padding: clamp(1.25rem, 4vw, 2rem);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .8);
+      -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      text-align: left;
-      line-height: 1.7;
+      box-shadow: 0 6px 24px rgba(58, 18, 48, .12);
+      line-height: 1.6;
       font-size: 1.05rem;
     }
+    .intro-card p { margin: 0 0 .9rem; }
+    .intro-card p:last-child { margin-bottom: 0; }
 
-    .intro-card p {
-      margin-bottom: 15px;
-    }
-
-    .intro-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
+    footer { text-align: center; padding: 1.25rem; font-size: .9rem; }
   </style>
 </head>
 <body>
@@ -139,10 +130,10 @@
     <div class="logo">
       <a href="index.html">LearnToBeAFeminist</a>
     </div>
-    <nav>
+    <nav aria-label="Langue / Language">
       <ul>
-        <li><a href="fr/index.html">Français</a></li>
-        <li><a href="en/index.html">English</a></li>
+        <li><a href="fr/index.html" hreflang="fr" lang="fr">Français</a></li>
+        <li><a href="en/index.html" hreflang="en" lang="en">English</a></li>
       </ul>
     </nav>
   </header>
@@ -151,42 +142,35 @@
     <section class="hero">
       <h1>Bienvenue sur<br>LearnToBeAFeminist</h1>
       <p class="slogan">
-        Un magazine engagé pour vous faire comprendre le féminisme, surtout si vous pensez ne pas en avoir besoin.
+        Un magazine engagé pour vous <strong>faire comprendre</strong> le féminisme, surtout si vous pensez ne pas en avoir besoin.
       </p>
 
       <div class="language-selection">
-        <a href="fr/index.html" class="btn">Version Française</a>
-        <a href="en/index.html" class="btn btn-secondary">English Version</a>
+        <a href="fr/index.html" class="pill" hreflang="fr" lang="fr">Version Française</a>
+        <a href="en/index.html" class="pill" hreflang="en" lang="en">English Version</a>
       </div>
     </section>
 
-    <!-- Presentation & Accueil -->
     <section class="intro-card">
-      <p style="font-weight: bold; font-size: 1.15rem;">
-        Bienvenue à tous, féministes convaincu·e·s comme anti-féministes.
-      </p>
-      <p>
-        Que vous soyez ici pour nourrir vos combats ou pour tester la solidité de vos certitudes, cet espace est fait pour vous.
-      </p>
-      <p>
-        Le féminisme n’est pas un club privé réservé aux initié·e·s, ni une menace pour qui que ce soit : c’est un dialogue ouvert sur la justice, l'égalité et la liberté. Aux féministes : trouvez ici des ressources pour fortifier vos idées. Aux sceptiques : installez-vous, lisez, questionnez, et mettez vos arguments à l'épreuve.
-      </p>
-      <p style="font-style: italic; font-weight: bold;">
-        Entrez sans crainte : ici on ne mord personne.
-      </p>
+      <p>Bienvenue à tous, féministes convaincu·e·s comme anti-féministes.</p>
+      <p>Que vous soyez ici pour nourrir vos combats ou pour tester la solidité de vos certitudes, cet espace est fait pour vous.</p>
+      <p>Le féminisme n’est pas un club privé réservé aux initié·e·s, ni une menace pour qui que ce soit : c’est un dialogue ouvert sur la justice, l’égalité et la liberté.</p>
+      <p><strong>Aux féministes :</strong> trouvez ici des ressources pour fortifier vos idées.<br>
+         <strong>Aux sceptiques :</strong> installez-vous, <strong>lisez, questionnez, et mettez vos arguments à l’épreuve.</strong></p>
+      <p>Entrez sans crainte : ici on ne mord personne.</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; LearnToBeAFeminist - Tous droits réservés.</p>
+    <p>&copy; 2026 LearnToBeAFeminist – Tous droits réservés.</p>
   </footer>
 
-  <!-- Script Netlify Identity pour l'administration -->
+  <!-- Redirection vers l'administration après connexion -->
   <script>
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
+      window.netlifyIdentity.on("init", function (user) {
         if (!user) {
-          window.netlifyIdentity.on("login", () => {
+          window.netlifyIdentity.on("login", function () {
             document.location.href = "/admin/";
           });
         }
