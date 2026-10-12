@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Articles – LearnToBeAFeminist</title>
+  <meta name="description" content="Tous les articles de LearnToBeAFeminist : éducation féministe, droits des femmes, inégalités de genre et voix de femmes africaines.">
+  <meta name="theme-color" content="#3A1230">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Articles – LearnToBeAFeminist">
+  <meta property="og:locale" content="fr_FR">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="LearnToBeAFeminist, accueil">
+        <span class="logo__name">Learn to Be a Feminist</span>
+        <span class="logo__tag">Éducation • Droits • Voix</span>
+      </a>
+
+      <div class="tools">
+        <p class="lang-switch" style="margin:0">
+          <span aria-current="true">FR</span>
+          <span aria-hidden="true">/</span>
+          <a href="../en/articles.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a>
+        </p>
+        <a class="icon-btn" href="#search" aria-label="Rechercher un article">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      </div>
+
+      <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="articles.html" aria-current="page">Articles</a></li>
+          <li><a href="comprendre-le-feminisme.html">Comprendre le féminisme</a></li>
+          <li><a href="voix-de-femmes.html">Voix de femmes</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="page-head">
+      <div class="container">
+        <h1>Articles</h1>
+        <p>Analyses, repères et récits sur les droits des femmes, l’éducation féministe et les réalités africaines.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Liste des articles">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <form id="search-form" class="search" role="search">
+            <label class="sr-only" for="search">Rechercher un article</label>
+            <input id="search" type="search" placeholder="Rechercher un article…" autocomplete="off">
+          </form>
+        </div>
+
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+        <ul id="articles-list" class="cards"></ul>
+        <p id="no-results" class="no-results" hidden>Aucun article ne correspond à votre recherche.</p>
+        <noscript><p>Activez JavaScript pour afficher la liste des articles.</p></noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><span class="logo__name">Learn to Be a Feminist</span></a>
+          <p>Magazine numérique bilingue sur l’éducation féministe, les droits des femmes et les voix africaines.</p>
+        </div>
+        <nav aria-label="Pied de page">
+          <ul>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="comprendre-le-feminisme.html">Comprendre le féminisme</a></li>
+            <li><a href="voix-de-femmes.html">Voix de femmes</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Informations">
+          <ul>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="../en/articles.html" hreflang="en" lang="en">English version</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer-bottom">© 2026 LearnToBeAFeminist. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="../js/articles-data.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
