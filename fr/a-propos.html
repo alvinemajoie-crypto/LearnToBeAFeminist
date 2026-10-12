@@ -12,6 +12,27 @@
   <meta property="og:locale" content="fr_FR">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .about-profile {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: flex-start;
+      margin-top: 30px;
+    }
+    @media (min-width: 768px) {
+      .about-profile {
+        grid-template-columns: 320px 1fr;
+      }
+    }
+    .about-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -55,22 +76,22 @@
     </section>
 
     <section class="article">
-      <div class="article-inner prose">
-        <h2>Notre mission</h2>
-        <p>LearnToBeAFeminist est un magazine numérique consacré à l’éducation féministe, aux droits des femmes, aux inégalités de genre et aux expériences des femmes africaines. Notre ambition : rendre ces sujets accessibles, rigoureux et vivants.</p>
-
-        <h2>Ce que vous y trouverez</h2>
-        <ul>
-          <li>des <a href="articles.html">articles</a> clairs sur l’éducation, les droits, le travail et l’histoire ;</li>
-          <li>des repères pour <a href="comprendre-le-feminisme.html">comprendre le féminisme</a> ;</li>
-          <li>des récits dans la rubrique <a href="voix-de-femmes.html">Voix de femmes</a>.</li>
-        </ul>
-
-        <h2>Pourquoi deux langues ?</h2>
-        <p>Le français et l’anglais sont deux langues de travail et de lecture sur le continent. Chaque page existe dans les deux langues, pour toucher des lectrices et des lecteurs plus nombreux.</p>
-
-        <h2>L’équipe</h2>
-        <p class="note-box"><strong>À compléter.</strong> Présentez ici la personne ou l’équipe derrière le magazine : parcours, motivations, contact.</p>
+      <div class="container">
+        <div class="about-profile">
+          <div class="about-photo">
+            <img src="../assets/images/alvine-doumbia.jpg" alt="Alvine Doumbia - Fondatrice de LearnToBeAFeminist">
+          </div>
+          <div class="prose">
+            <h2>Bienvenue dans LearnToBeAFeminist</h2>
+            <p>Je suis <strong>Alvine Doumbia</strong>, féministe depuis quatre ans. Née dans une famille africaine et élevée dans un environnement profondément attaché aux valeurs chrétiennes, j’ai appris à interroger les traditions, les normes sociales et la place qu’elles accordent aux femmes.</p>
+            
+            <p>En Afrique, le féminisme suscite encore des réticences, parfois parce qu’il est perçu comme étranger à nos réalités. Pourtant, les femmes africaines ont-elles moins de raisons de revendiquer l’égalité, simplement parce que leurs combats diffèrent de ceux des femmes d’ailleurs ?</p>
+            
+            <p>Nos expériences sont multiples, façonnées par le genre, la classe sociale, la religion, l’origine et bien d’autres réalités. C’est pourquoi il est essentiel de comprendre le féminisme dans toute son intersectionnalité, sans réduire les expériences des femmes à une seule et même histoire.</p>
+            
+            <p style="font-weight: bold; font-style: italic;">Que vous soyez passionnée de féminisme, simplement curieuse ou farouchement opposée à ses idées, vous êtes la bienvenue ici. Apprenons, questionnons et comprenons ensemble.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
