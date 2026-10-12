@@ -8,6 +8,130 @@
 
   <!-- Script Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    /* Design avec fond rosé et image en arrière-plan */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(rgba(252, 228, 236, 0.85), rgba(252, 228, 236, 0.85)), 
+                  url('assets/images/wmremove-transformed.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #2b112c;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo a {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #2b112c;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2b112c;
+      font-weight: 600;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #2b112c;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .slogan {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2b112c;
+      margin-bottom: 30px;
+    }
+
+    .language-selection {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: #512b58;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #3b1e40;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #512b58;
+      border: 2px solid #512b58;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(81, 43, 88, 0.1);
+    }
+
+    .intro-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      text-align: left;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .intro-card p {
+      margin-bottom: 15px;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -25,12 +149,31 @@
 
   <main>
     <section class="hero">
-      <h1>Bienvenue sur LearnToBeAFeminist</h1>
-      <p>Choisissez votre langue / Choose your language</p>
+      <h1>Bienvenue sur<br>LearnToBeAFeminist</h1>
+      <p class="slogan">
+        Un magazine engagé pour vous faire comprendre le féminisme, surtout si vous pensez ne pas en avoir besoin.
+      </p>
+
       <div class="language-selection">
         <a href="fr/index.html" class="btn">Version Française</a>
-        <a href="en/index.html" class="btn">English Version</a>
+        <a href="en/index.html" class="btn btn-secondary">English Version</a>
       </div>
+    </section>
+
+    <!-- Presentation & Accueil -->
+    <section class="intro-card">
+      <p style="font-weight: bold; font-size: 1.15rem;">
+        Bienvenue à tous, féministes convaincu·e·s comme anti-féministes.
+      </p>
+      <p>
+        Que vous soyez ici pour nourrir vos combats ou pour tester la solidité de vos certitudes, cet espace est fait pour vous.
+      </p>
+      <p>
+        Le féminisme n’est pas un club privé réservé aux initié·e·s, ni une menace pour qui que ce soit : c’est un dialogue ouvert sur la justice, l'égalité et la liberté. Aux féministes : trouvez ici des ressources pour fortifier vos idées. Aux sceptiques : installez-vous, lisez, questionnez, et mettez vos arguments à l'épreuve.
+      </p>
+      <p style="font-style: italic; font-weight: bold;">
+        Entrez sans crainte : ici on ne mord personne.
+      </p>
     </section>
   </main>
 
@@ -38,7 +181,7 @@
     <p>&copy; LearnToBeAFeminist - Tous droits réservés.</p>
   </footer>
 
-  <!-- Script Netlify Identity pour l'accès Admin -->
+  <!-- Script Netlify Identity pour l'administration -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
