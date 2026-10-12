@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnToBeAFeminist – Digital Magazine</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Script Netlify Identity pour la redirection vers /admin/ -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html">LearnToBeAFeminist</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="fr/index.html">Français</a></li>
+        <li><a href="en/index.html">English</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Bienvenue sur LearnToBeAFeminist</h1>
+      <p>Choisissez votre langue / Choose your language</p>
+      <div class="language-selection">
+        <a href="fr/index.html" class="btn">Version Française</a>
+        <a href="en/index.html" class="btn">English Version</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; LearnToBeAFeminist - Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
