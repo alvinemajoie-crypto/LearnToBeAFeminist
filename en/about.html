@@ -12,6 +12,27 @@
   <meta property="og:locale" content="en_GB">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .about-profile {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: flex-start;
+      margin-top: 30px;
+    }
+    @media (min-width: 768px) {
+      .about-profile {
+        grid-template-columns: 320px 1fr;
+      }
+    }
+    .about-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -55,22 +76,22 @@
     </section>
 
     <section class="article">
-      <div class="article-inner prose">
-        <h2>Our mission</h2>
-        <p>LearnToBeAFeminist is a digital magazine on feminist education, women’s rights, gender inequality and the experiences of African women. Our ambition: to make these subjects accessible, rigorous and alive.</p>
-
-        <h2>What you will find here</h2>
-        <ul>
-          <li>clear <a href="articles.html">articles</a> on education, rights, work and history;</li>
-          <li>landmarks to <a href="understanding-feminism.html">understand feminism</a>;</li>
-          <li>stories in the <a href="womens-voices.html">Women’s voices</a> section.</li>
-        </ul>
-
-        <h2>Why two languages?</h2>
-        <p>French and English are both working and reading languages across the continent. Every page exists in both languages, to reach more readers.</p>
-
-        <h2>The team</h2>
-        <p class="note-box"><strong>To be completed.</strong> Introduce the person or team behind the magazine here: background, motivation, contact.</p>
+      <div class="container">
+        <div class="about-profile">
+          <div class="about-photo">
+            <img src="../assets/images/alvine-doumbia.jpg" alt="Alvine Doumbia - Founder of LearnToBeAFeminist">
+          </div>
+          <div class="prose">
+            <h2>Welcome to LearnToBeAFeminist</h2>
+            <p>I am <strong>Alvine Doumbia</strong>, a feminist for four years. Born into an African family and raised in an environment deeply attached to Christian values, I learned to question traditions, social norms, and the place assigned to women.</p>
+            
+            <p>In Africa, feminism still meets resistance, sometimes because it is perceived as alien to our realities. Yet, do African women have fewer reasons to demand equality, simply because their struggles differ from those of women elsewhere?</p>
+            
+            <p>Our experiences are multiple, shaped by gender, social class, religion, origin, and many other realities. That is why it is essential to understand feminism in all its intersectionality, without reducing women’s experiences to a single narrative.</p>
+            
+            <p style="font-weight: bold; font-style: italic;">Whether you are passionate about feminism, simply curious, or fiercely opposed to its ideas, you are welcome here. Let us learn, question, and understand together.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
