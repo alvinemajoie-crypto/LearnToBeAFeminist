@@ -6,19 +6,8 @@
   <title>LearnToBeAFeminist – Digital Magazine</title>
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Script Netlify Identity pour la redirection vers /admin/ -->
+  <!-- Script Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </head>
 <body>
 
@@ -49,5 +38,17 @@
     <p>&copy; LearnToBeAFeminist - Tous droits réservés.</p>
   </footer>
 
+  <!-- Script de redirection placé avant la fermeture du body -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
