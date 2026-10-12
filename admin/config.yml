@@ -6,6 +6,7 @@ media_folder: "assets/images"
 public_folder: "/assets/images"
 
 collections:
+  # 1. Articles en Français
   - name: "articles_fr"
     label: "Articles (Français)"
     folder: "fr/articles"
@@ -17,6 +18,7 @@ collections:
       - { label: "Description / Résumé", name: "description", widget: "text" }
       - { label: "Contenu de l'article", name: "body", widget: "markdown" }
 
+  # 2. Articles en Anglais
   - name: "articles_en"
     label: "Articles (English)"
     folder: "en/articles"
@@ -27,3 +29,34 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  # 3. Pages Statiques (Style WordPress : Accueil, À propos, Contact)
+  - name: "pages"
+    label: "Pages du Site"
+    files:
+      - label: "Page d'Accueil"
+        name: "accueil"
+        file: "content/accueil.json"
+        fields:
+          - { label: "Titre principal (Hero)", name: "titre_principal", widget: "string" }
+          - { label: "Sous-titre / Slogan", name: "sous_titre", widget: "string" }
+          - { label: "Texte d'introduction", name: "texte_intro", widget: "markdown" }
+          - { label: "Bannière / Image d'accueil", name: "image_hero", widget: "image", required: false }
+
+      - label: "Page À Propos"
+        name: "a_propos"
+        file: "content/a_propos.json"
+        fields:
+          - { label: "Titre de la page", name: "titre", widget: "string" }
+          - { label: "Photo de présentation", name: "photo", widget: "image", required: false }
+          - { label: "Texte / Bio", name: "contenu", widget: "markdown" }
+
+      - label: "Page Contact"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - { label: "Titre de la page", name: "titre", widget: "string" }
+          - { label: "Email de contact", name: "email", widget: "string" }
+          - { label: "Téléphone / WhatsApp", name: "telephone", widget: "string", required: false }
+          - { label: "Adresse / Localisation", name: "adresse", widget: "string", required: false }
+          - { label: "Message d'accueil contact", name: "message_intro", widget: "text" }
